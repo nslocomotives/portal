@@ -1,0 +1,47 @@
+{% extends '::newsletterbase.html.twig' %}
+
+{% set active_sub_page = "templates" %}
+
+{% block newsletterbody -%}
+    <h2>templates list</h2>
+
+    <table class="records_list  table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Columns</th>
+                <th>Body</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('newsletter_templates_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.columns }}</td>
+                <td>{{ entity.body }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('newsletter_templates_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('newsletter_templates_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('newsletter_templates_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

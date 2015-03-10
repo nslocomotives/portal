@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% set active_sub_page = active_sub_page|default('newsletter') -%}
+
+{% block body %}
+    <div class="container">
+    {% block newsletterhead %}
+    <h1>MNR Newsletter Admin Page</h1>
+        
+    <ul class="nav nav-tabs"> 
+        <li role="presentation" {% if active_sub_page == 'newsletter' %}class="active"{% endif%}><a href="{{ path('newsletter') }}" >Overview</a></li>
+        <li role="presentation" {% if active_sub_page == 'messages' %}class="active"{% endif%}><a href="newsletter_messages">messages</a></li>
+        <li role="presentation" {% if active_sub_page == 'subscribers' %}class="active"{% endif%}><a href="{{ path('newsletter_subscribers') }}">subscribers</a></li>
+        <li role="presentation" {% if active_sub_page == 'newsletters' %}class="active"{% endif%}><a href="{{ path('newsletter_newsletters') }}">newsletters</a></li>
+        <li role="presentation" {% if active_sub_page == 'templates' %}class="active"{% endif%}><a href="{{ path('newsletter_templates') }}">templates</a></li>
+    </ul>
+    {% endblock  %}
+    {% block newsletterbody %}
+    {% endblock %}
+    </div>
+{% endblock %}
+
+

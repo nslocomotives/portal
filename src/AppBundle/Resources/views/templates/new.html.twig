@@ -1,0 +1,17 @@
+{% extends '::newsletterbase.html.twig' %}
+
+{% set active_sub_page = "templates" %}
+
+{% block newsletterbody -%}
+    <h2>templates creation</h2>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('newsletter_templates') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

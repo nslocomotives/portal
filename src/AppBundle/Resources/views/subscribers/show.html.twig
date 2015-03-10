@@ -1,0 +1,42 @@
+{% extends '::newsletterbase.html.twig' %}
+
+{% set active_sub_page = "subscribers" %}
+
+{% block newsletterbody -%}
+    <h1>subscribers</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ entity.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ entity.surname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('newsletter_subscribers') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('newsletter_subscribers_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

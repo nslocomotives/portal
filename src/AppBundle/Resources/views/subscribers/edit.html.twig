@@ -1,0 +1,38 @@
+{% extends '::newsletterbase.html.twig' %}
+
+{% set active_sub_page = "subscribers" %}
+
+{% block newsletterbody -%}
+    <h1>Edit Subscriber</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_errors(edit_form) }}
+        
+        {{ form_label(edit_form.firstname) }}
+        {{ form_errors(edit_form.firstname) }}
+        {{ form_widget(edit_form.firstname) }}
+
+        {{ form_label(edit_form.surname) }} 
+        {{ form_errors(edit_form.surname) }}
+        {{ form_widget(edit_form.surname) }}
+
+        {{ form_label(edit_form.email) }}
+        {{ form_errors(edit_form.email) }}
+        {{ form_widget(edit_form.email) }}
+
+    
+
+        {{ form_widget(edit_form.submit) }}
+
+        
+    {{ form_end(edit_form) }}
+    
+    <p class="help-block">Note to dev:- Need to add form validation and confirmation email functionality.</p>
+
+
+        <a href="{{ path('newsletter_subscribers') }}">Cancel</a>
+        {{ form(delete_form) }}
+    
+
+    
+{% endblock %}

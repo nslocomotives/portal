@@ -1,0 +1,18 @@
+{% extends '::newsletterbase.html.twig' %}
+
+{% set active_sub_page = "newsletters" %}
+
+{% block newsletterbody -%}
+    <h2>newsletters edit</h2>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('newsletter_newsletters') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

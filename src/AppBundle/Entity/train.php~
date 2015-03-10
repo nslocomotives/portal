@@ -1,0 +1,96 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * train
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class train
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="headcode", type="string", length=8)
+     */
+    private $headcode;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="locos")
+     */
+    private $locoNo; 
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="trainshedual", inversedBy="train")
+     */
+    private $trains;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set headcode
+     *
+     * @param string $headcode
+     * @return train
+     */
+    public function setHeadcode($headcode)
+    {
+        $this->headcode = $headcode;
+    
+        return $this;
+    }
+
+    /**
+     * Get headcode
+     *
+     * @return string 
+     */
+    public function getHeadcode()
+    {
+        return $this->headcode;
+    }
+
+    /**
+     * Set locoNo
+     *
+     * @param string $locoNo
+     * @return train
+     */
+    public function setLocoOne($locoone)
+    {
+        $this->locoone = $locoone;
+    
+        return $this;
+    }
+
+    /**
+     * Get locoNo
+     *
+     * @return string 
+     */
+    public function getLocoOne()
+    {
+        return $this->locoone;
+    }
+}
