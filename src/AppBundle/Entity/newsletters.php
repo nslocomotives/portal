@@ -128,4 +128,44 @@ class newsletters
     {
         return $this->visible;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->subscriberId = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add subscriberId
+     *
+     * @param \AppBundle\Entity\subscribers $subscriberId
+     * @return newsletters
+     */
+    public function addSubscriberId(\AppBundle\Entity\subscribers $subscriberId)
+    {
+        $this->subscriberId[] = $subscriberId;
+    
+        return $this;
+    }
+
+    /**
+     * Remove subscriberId
+     *
+     * @param \AppBundle\Entity\subscribers $subscriberId
+     */
+    public function removeSubscriberId(\AppBundle\Entity\subscribers $subscriberId)
+    {
+        $this->subscriberId->removeElement($subscriberId);
+    }
+
+    /**
+     * Get subscriberId
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSubscriberId()
+    {
+        return $this->subscriberId;
+    }
 }

@@ -130,4 +130,50 @@ class trainshedual
     {
         return $this->schedule;
     }
+
+    /**
+     * Add train
+     *
+     * @param \AppBundle\Entity\train $train
+     * @return trainshedual
+     */
+    public function addTrain(\AppBundle\Entity\train $train)
+    {
+        $this->train[] = $train;
+    
+        return $this;
+    }
+
+    /**
+     * Remove train
+     *
+     * @param \AppBundle\Entity\train $train
+     */
+    public function removeTrain(\AppBundle\Entity\train $train)
+    {
+        $this->train->removeElement($train);
+    }
+
+    /**
+     * Set trains
+     *
+     * @param \AppBundle\Entity\schedualdays $trains
+     * @return trainshedual
+     */
+    public function setTrains(\AppBundle\Entity\schedualdays $trains = null)
+    {
+        $this->trains = $trains;
+    
+        return $this;
+    }
+
+    /**
+     * Get trains
+     *
+     * @return \AppBundle\Entity\schedualdays 
+     */
+    public function getTrains()
+    {
+        return $this->trains;
+    }
 }

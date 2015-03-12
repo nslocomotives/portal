@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Timetable list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Signalid</th>
+                <th>Timeloading</th>
+                <th>Operatingchar</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('timetable_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.signalId }}</td>
+                <td>{{ entity.timeLoading }}</td>
+                <td>{{ entity.operatingChar }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('timetable_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('timetable_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('timetable_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

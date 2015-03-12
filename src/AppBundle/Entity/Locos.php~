@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Locos
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Locos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Loco number", type="string", length=10)
+     */
+    private $locoNumber;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="LocoRoster", inversedBy="locos")
+     */
+    private $locoRoster_id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Loco Name", type="string", length=30)
+     */
+    private $locoName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Operational Status", type="string", length=30)
+     */
+    private $operationalStatus;
+
+}

@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Timetable</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Signalid</th>
+                <td>{{ entity.signalId }}</td>
+            </tr>
+            <tr>
+                <th>Timeloading</th>
+                <td>{{ entity.timeLoading }}</td>
+            </tr>
+            <tr>
+                <th>Operatingchar</th>
+                <td>{{ entity.operatingChar }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('timetable') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('timetable_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

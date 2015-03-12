@@ -128,44 +128,4 @@ class subscribers
     {
         return $this->email;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->newsletterId = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add newsletterId
-     *
-     * @param \AppBundle\Entity\newsletters $newsletterId
-     * @return subscribers
-     */
-    public function addNewsletterId(\AppBundle\Entity\newsletters $newsletterId)
-    {
-        $this->newsletterId[] = $newsletterId;
-    
-        return $this;
-    }
-
-    /**
-     * Remove newsletterId
-     *
-     * @param \AppBundle\Entity\newsletters $newsletterId
-     */
-    public function removeNewsletterId(\AppBundle\Entity\newsletters $newsletterId)
-    {
-        $this->newsletterId->removeElement($newsletterId);
-    }
-
-    /**
-     * Get newsletterId
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getNewsletterId()
-    {
-        return $this->newsletterId;
-    }
 }

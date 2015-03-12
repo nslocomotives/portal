@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * templates
+ * newsletters
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class templates
+class newsletters
 {
     /**
      * @var integer
@@ -29,18 +29,25 @@ class templates
     private $name;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="columns", type="integer")
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $columns;
+    private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="body", type="text")
+     * @ORM\Column(name="visible", type="boolean")
      */
-    private $body;
+    private $visible;
+    
+     /**
+     * @var integer
+     *
+     * @ORM\ManyToMany(targetEntity="subscribers")
+     */
+    private $subscriberId;
 
 
     /**
@@ -57,7 +64,7 @@ class templates
      * Set name
      *
      * @param string $name
-     * @return templates
+     * @return newsletters
      */
     public function setName($name)
     {
@@ -77,48 +84,48 @@ class templates
     }
 
     /**
-     * Set columns
+     * Set description
      *
-     * @param integer $columns
-     * @return templates
+     * @param string $description
+     * @return newsletters
      */
-    public function setColumns($columns)
+    public function setDescription($description)
     {
-        $this->columns = $columns;
+        $this->description = $description;
     
         return $this;
     }
 
     /**
-     * Get columns
-     *
-     * @return integer 
-     */
-    public function getColumns()
-    {
-        return $this->columns;
-    }
-
-    /**
-     * Set body
-     *
-     * @param string $body
-     * @return templates
-     */
-    public function setBody($body)
-    {
-        $this->body = $body;
-    
-        return $this;
-    }
-
-    /**
-     * Get body
+     * Get description
      *
      * @return string 
      */
-    public function getBody()
+    public function getDescription()
     {
-        return $this->body;
+        return $this->description;
+    }
+
+    /**
+     * Set visible
+     *
+     * @param boolean $visible
+     * @return newsletters
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+    
+        return $this;
+    }
+
+    /**
+     * Get visible
+     *
+     * @return boolean 
+     */
+    public function getVisible()
+    {
+        return $this->visible;
     }
 }
