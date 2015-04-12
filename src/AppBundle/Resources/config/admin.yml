@@ -1,0 +1,12 @@
+# AppBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: AppBundle\Admin\SubscriberAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Newsletter", label: "Subscribers" }
+        arguments:
+            - ~
+            - AppBundle\Entity\subscribers
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

@@ -20,7 +20,14 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "wowo/wowo-queue-bundle": "~1.3",
-        "wowo/wowo-newsletter-bundle": "dev-master"
+        "wowo/wowo-newsletter-bundle": "dev-master",
+        "sonata-project/admin-bundle": "~2.2",
+        "sonata-project/doctrine-orm-admin-bundle": "~2.3",
+        "sonata-project/easy-extends-bundle": "~2.1",
+        "sonata-project/user-bundle": "~2.2",
+        "knplabs/knp-menu-bundle": "~1.1",
+        "sonata-project/timeline-bundle": "~2.2@dev",
+        "mopa/bootstrap-bundle": "v3.0.0-beta3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
