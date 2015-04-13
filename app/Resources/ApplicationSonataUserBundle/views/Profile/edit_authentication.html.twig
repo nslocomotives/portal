@@ -9,6 +9,10 @@ file that was distributed with this source code.
 
 #}
 
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
 {% sonata_template_box 'This is the user authentication edition template. Feel free to override it.' %}
 
 <div class="row">
@@ -37,3 +41,5 @@ file that was distributed with this source code.
         </div>
     </div>
 </div>
+            
+{% endblock %}

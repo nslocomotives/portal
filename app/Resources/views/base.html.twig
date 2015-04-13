@@ -36,20 +36,28 @@
         <li><a href="#">Tickets</a></li>
         <li><a href="{{ path('newsletter') }}">Newsletter</a></li>
       </ul>
-
+ 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
+        {% if app.user %}
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ gravatar('nsmith@tnsi.com', '20', 'g', 'defaultimage.png', true) }}" /> {{ app.user.username }} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Manage Users</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            {% if is_granted('ROLE_SONATA_ADMIN') %}
+              <li><a href="{{ path('sonata_admin_redirect') }}">Admin Dashboard</a></li>
+            {% endif %}
             <li class="divider"></li>
-            <li><a href="{{ path('sonata_user_profile_show') }}">Profile</a></li>
+            <li><a href="{{ path('sonata_user_profile_edit') }}">Edit Profile</a></li>
             <li><a href="{{ path('sonata_user_security_logout') }}">Log Out</a></li>
           </ul>
         </li>
+        {% else %}
+          <li>
+            <div>
+              <a href="{{ path('sonata_user_profile_show') }}" type="button" class="btn btn-info navbar-btn">Sign In</a>
+            </div>
+          </li>
+        {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
