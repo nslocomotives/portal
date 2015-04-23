@@ -10,6 +10,7 @@ imports:
     - { resource: sonata/sonata_timeline.yml }
     - { resource: sonata/sonata_user.yml }
     - { resource: sonata/sonata_formater.yml }
+    - { resource: sonata/sonata_media.yml }
     
 
 framework:
@@ -82,6 +83,15 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
+# Doctrine PHPCR Configuration
+doctrine_phpcr:
+    odm:
+        auto_mapping: true
+        mappings:
+            SonataMediaBundle:
+                prefix: Sonata\MediaBundle\PHPCR
+
+        
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
