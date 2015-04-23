@@ -6,5 +6,6 @@ php:
   - nightly
 
 script:
+ - composer update --lock
  - composer install
 
