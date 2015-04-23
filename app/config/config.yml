@@ -76,10 +76,6 @@ doctrine:
             json: Sonata\Doctrine\Types\JsonType
 
     orm:
-        entity_managers:
-            default:
-                mappings:
-                    SonataMediaBundle: ~
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
