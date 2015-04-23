@@ -7,3 +7,18 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    sonata.admin.post:
+        class: AppBundle\Admin\SubscriberAdmin
+        tags:
+            - position: left
+              name: sonata.admin
+              manager_type: orm
+              group: "Newsletter"
+              label: "Subscribers"
+        arguments:
+            - ~
+            - AppBundle\Entity\subscribers
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

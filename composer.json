@@ -28,7 +28,9 @@
         "knplabs/knp-menu-bundle": "~1.1",
         "sonata-project/timeline-bundle": "~2.2@dev",
         "mopa/bootstrap-bundle": "v3.0.0-beta3",
-        "ornicar/gravatar-bundle" : "dev-master"
+        "ornicar/gravatar-bundle" : "dev-master",
+        "sonata-project/formatter-bundle": "~2.3",
+        "sonata-project/media-bundle": "~2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

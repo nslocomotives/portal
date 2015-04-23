@@ -2,10 +2,15 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: sonata_admin.yml }
-    - { resource: sonata_core.yml }
-    - { resource: sonata_timeline.yml }
-    - { resource: @AppBundle/Resources/config/admin.yml }
+    
+    # Sonata Core Bundles
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_core.yml }
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_timeline.yml }
+    - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_formater.yml }
+    
 
 framework:
     #esi:             ~
