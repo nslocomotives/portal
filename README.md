@@ -8,5 +8,5 @@ provide a memebers interface and allow management of events.
 
 git clone https://github.com/nslocomotives/portal.git
 
-app/console doctrine:create:database
+app/console doctrine:database:create
 app/console doctrine:schema:create
