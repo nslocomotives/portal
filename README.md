@@ -4,7 +4,7 @@ Mid-norfolk Railway Portal App
 
 Welcome to the Portal Application of the mid-norfolk railway 
 built on the Symfony2 application to manage the timetable, newsletters,
-provide a memebers interface and allow management of events.
+provide a members access to manage or interact with the rest of the teams.
 
 git clone https://github.com/nslocomotives/portal.git
 
